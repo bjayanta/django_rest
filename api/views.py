@@ -12,16 +12,16 @@ class PostView(APIView):
         
         return Response(serializer.data)
 
-    def post(self, request):
-        datas = request.data
-        print(datas)
+    # def post(self, request):
+    #     datas = request.data
+    #     print(datas)
 
-        serializer = PostSerializer(data=datas)
+    #     serializer = PostSerializer(data=datas)
 
-        if serializer.is_valid():
-            serializer.save() 
-            return Response({"message": "Data has been saved."})
+    #     if serializer.is_valid():
+    #         serializer.save() 
+    #         return Response({"message": "Data has been saved."})
 
-        return Response({"message": "Submited data is found."})
+    #     return Response({"message": "Submited data is found."})
 
 
