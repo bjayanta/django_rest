@@ -1,13 +1,11 @@
-from posixpath import basename
-from xml.etree.ElementInclude import include
-from django.urls import path
+from django.urls import path, include
 from .views import PostView
-# from rest_framework import routers
+from rest_framework import routers
 
-# route = routers.DefaultRouter()
-# route.register("", PostView, basename="postapi")
+route = routers.DefaultRouter()
+route.register("", PostView, basename="postapi")
 
 urlpatterns = [
-    path("", PostView.as_view()),
-    # path("", include(route.urls)),
+    # path("", PostView.as_view()),
+    path("", include(route.urls)),
 ]
